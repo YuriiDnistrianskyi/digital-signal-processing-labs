@@ -1,5 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 x = np.array([2, 4, 6, 7, 10, 12, 14, 16])
 y = np.array([1, 3, 4, 8, 4, -2, -7, 0])

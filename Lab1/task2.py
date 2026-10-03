@@ -1,5 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from scipy.interpolate import CubicSpline
 
 x = np.array([2, 4, 6, 7, 10, 12, 14, 16])
