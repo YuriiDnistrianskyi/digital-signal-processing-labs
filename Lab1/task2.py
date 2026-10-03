@@ -9,6 +9,14 @@ N = 8
 
 spline = CubicSpline(x, y)
 
+for i in range(N - 1):
+    a = spline.c[0, i]
+    b = spline.c[1, i]
+    c = spline.c[2, i]
+    d = spline.c[3, i]
+
+    print(f"Interval {i + 1}: a = {a}; b = {b}; c = {c}; d = {d}")
+
 x_list = np.linspace(min(x), max(x), 100)
 y_list = spline(x_list)
 
