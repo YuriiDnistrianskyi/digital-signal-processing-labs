@@ -3,7 +3,11 @@ import numpy as np
 
 y = np.array([1.0, 2.5, 3.5, 4.0, 2.0, 1.5])
 
-N = 6
+N = len(y)
+
+if N % 2 != 0:
+    raise ValueError("The number of parameters must be even.")
+
 omega0 = 1
 Ta = (2 * np.pi) / (N * omega0)
 t = np.arange(N) * Ta

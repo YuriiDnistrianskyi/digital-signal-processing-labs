@@ -10,7 +10,7 @@ def function(x, a, b):
 
 params, _ = curve_fit(function, x, y)
 
-print(f"A = {params[0]}")
+print(f"A* = {params[0]}")
 print(f"B = {params[1]}")
 
 x_plot = np.linspace(min(x), max(x), 100)
