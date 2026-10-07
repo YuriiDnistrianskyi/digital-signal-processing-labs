@@ -6,7 +6,7 @@ y = np.array([1.0, 2.5, 3.5, 4.0, 2.0, 1.5])
 x = np.array([0.1 * 3 * n for n in range(1, len(y) + 1)])
 
 def function(x, a, b):
-    return np.e ** (a + b * x)
+    return np.exp(a + b * x)
 
 params, _ = curve_fit(function, x, y)
 
