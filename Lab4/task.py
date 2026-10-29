@@ -21,7 +21,7 @@ print(f"yn = {x[0]}*x0 ", end="")
 for n in range(N + 1):
     print(f"+ {x[n]}*x{n} ", end="")
 
-f = np.linspace(0, 500, 10)
+f = np.linspace(0, 1000, 10)
 H = np.array([
     sum(
         x[k] * np.exp(-1j * 2 * np.pi * freq * k / fa)
@@ -40,25 +40,39 @@ y = np.convolve(
     mode='full'
 )
 
+i = [1] + [0] * 29
+i = np.convolve(
+    np.array(i),
+    np.array(x),
+    mode="full"
+)
+
 plt.figure(figsize=(10, 10))
 
-plt.subplot(3, 1, 1)
+plt.subplot(4, 1, 1)
 plt.plot(f, amplitude, label="АЧХ")
 plt.xlabel('f')
 plt.ylabel('A')
 plt.grid()
 plt.legend()
 
-plt.subplot(3, 1, 2)
+plt.subplot(4, 1, 2)
 plt.plot(f, phase, label="ФЧХ")
 plt.xlabel('f')
 plt.ylabel('P')
 plt.grid()
 plt.legend()
 
-plt.subplot(3, 1, 3)
+plt.subplot(4, 1, 3)
 plt.plot(y_plot, label="Signal")
 plt.plot(y, label="Filter signal")
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid()
+plt.legend()
+
+plt.subplot(4, 1, 4)
+plt.stem(i, label="ІХ")
 plt.xlabel('x')
 plt.ylabel('y')
 plt.grid()
